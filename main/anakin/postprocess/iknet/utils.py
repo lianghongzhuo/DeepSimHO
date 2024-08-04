@@ -2,9 +2,9 @@ import torch
 import numpy as np
 import transforms3d as t3d
 import torch.nn.functional as F
-from opendr.camera import ProjectPoints
-from opendr.renderer import ColoredRenderer
-from opendr.lighting import LambertianPointLight
+# from opendr.camera import ProjectPoints
+# from opendr.renderer import ColoredRenderer
+# from opendr.lighting import LambertianPointLight
 import cv2
 
 from anakin.postprocess.iknet import common

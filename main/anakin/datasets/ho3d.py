@@ -281,7 +281,7 @@ class HO3D(HOdata):
         return joints_3d.astype(np.float32)
 
     def get_hand_faces(self, idx):
-        faces = np.array(self.mano_layer.th_faces).astype(np.long)
+        faces = np.array(self.mano_layer.th_faces)#.astype(np.long)
         return faces
 
     def get_joints_2d(self, idx):
@@ -364,7 +364,7 @@ class HO3D(HOdata):
         annot = self.annot_mapping[seq][img_idx]
         obj_id = annot["objName"]
         objfaces = self.obj_meshes[obj_id]["faces"]
-        objfaces = np.array(objfaces).astype(np.long)
+        objfaces = np.array(objfaces)#.astype(np.long)
         n_rows_to_pad = 2008 - objfaces.shape[0]
         # print(n_rows_to_pad)
         objfaces = np.pad(objfaces, ((0, n_rows_to_pad), (0, 0)), 'constant')

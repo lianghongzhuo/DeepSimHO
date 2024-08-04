@@ -1,5 +1,6 @@
 import os
 import jax.numpy as np
+import numpy
 from jax import jit
 import pickle
 import cv2
@@ -31,7 +32,9 @@ class ManoLayer:
         robust_rot=False,
     ):
         super().__init__()
-
+        # get the path of current folder
+        current_folder = os.path.dirname(os.path.abspath(__file__))
+        mano_root = current_folder + "/../../../thirdparty/manotorch/" + mano_root
         self.center_idx = center_idx
         self.robust_rot = robust_rot
         if root_rot_mode == "axisang":
@@ -113,6 +116,7 @@ class ManoLayer:
 
     def _lrotmin(self, p):
         p = p.ravel()[3:]
+        p = numpy.array(p)
         return np.concatenate([(cv2.Rodrigues(pp)[0] - np.eye(3)).ravel() for pp in p.reshape((-1, 3))]).ravel()
 
     def _posemap_axisang(self, pose_vectors):

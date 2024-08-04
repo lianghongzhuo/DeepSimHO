@@ -53,7 +53,7 @@ def hodata_collate(batch):
                 # generate a new field, contains padding mask
                 # note that only the beginning pop_value.shape[0] points are in effect
                 # so the mask will be a vector of length max_size, with origin_len ones in the beginning
-                padding_mask = np.zeros(max_size, dtype=np.int)
+                padding_mask = np.zeros(max_size, dtype=np.int64)
                 padding_mask[:orig_len] = 1
                 sample[padding_query_field] = padding_mask
 

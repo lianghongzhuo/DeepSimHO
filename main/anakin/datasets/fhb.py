@@ -298,7 +298,7 @@ class FPHB(HOdata):
     def get_obj_faces(self, idx):
         obj = self.obj_names[idx]
         objfaces = self.split_objects[obj]["faces"]
-        return np.array(objfaces).astype(np.int32)
+        return np.array(objfaces).astype(np.int64)
 
     def get_obj_transf_wrt_cam(self, idx):
         verts_can, v_0, _ = self.get_obj_verts_can(idx)

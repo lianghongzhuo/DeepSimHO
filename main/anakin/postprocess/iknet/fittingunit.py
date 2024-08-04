@@ -4,8 +4,8 @@ import torch
 import torch.backends.cudnn as cudnn
 import jax.numpy as npj
 from jax import grad, jit
-from jax.experimental import optimizers
-
+# from jax.experimental import optimizers
+from jax.example_libraries import optimizers
 from .manolayer import ManoLayer
 from .checkpoints import CheckpointIO
 from . import utils
@@ -139,7 +139,7 @@ class FittingUnit(object):
             self.reload() # reloading at different position
 
         # initialize other stuff
-        self.face = np.loadtxt(hand_face_path).astype(np.int32)
+        self.face = np.loadtxt(hand_face_path).astype(np.int64)
         self.renderer = utils.MeshRenderer(self.face, img_size=224)
 
         # model in eval

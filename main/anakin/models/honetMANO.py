@@ -5,7 +5,7 @@ from typing import Dict
 
 import torch
 import torch.nn as nn
-from manotorch.utils.rodrigues import rodrigues
+from manotorch.utils.rodrigues import _rodrigues
 
 from anakin.datasets.hoquery import Queries
 from anakin.models.mano import ManoAdaptor

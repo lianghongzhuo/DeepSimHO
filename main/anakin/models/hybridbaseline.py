@@ -32,7 +32,7 @@ class HybridBaseline(nn.Module):
         self.box_head = build_model(cfg["BOX_HEAD"], default_args=cfg["DATA_PRESET"])  # box_head, mlp
         self.discriminator = PhysicsMeshMLP()
         self.fitting_unit = FittingUnit(aquire_gt=True) # generate GT fitting, note fitting unit is not a subclass of nn.Module so it's not trainable
-        self.face = np.loadtxt("assets/postprocess/hand_close.npy").astype(np.int32) # for renderer
+        self.face = np.loadtxt("assets/postprocess/hand_close.npy").astype(np.int64) # for renderer
         self.init_weights(pretrained=cfg["PRETRAINED"])
         logger.info(f"{type(self).__name__} uses center_idx {self.center_idx}")
         logger.info(f"{type(self).__name__} has {param_size(self)}M parameters")

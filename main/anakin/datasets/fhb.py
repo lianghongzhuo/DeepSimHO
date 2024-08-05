@@ -274,7 +274,7 @@ class FPHB(HOdata):
         return HOdata.persp_project(verts, self.cam_intr)
 
     def get_hand_faces(self, idx):
-        faces = np.array(self.mano_layer.th_faces).astype(np.long)
+        faces = np.array(self.mano_layer.th_faces)#.astype(np.long)
         return faces
 
     def _fhb_get_hand_info(self, idx):

@@ -11,7 +11,7 @@ micromamba install nvidia/label/cuda-12.0.0::cuda-libraries
 # install packages from conda-forge, micromamba set conda-forge as default channel, so no need to specify here
 micromamba install pytorch3d pandas opencv numba scipy kaolin pytorch trimesh \
 mujoco ipython jax transforms3d ipyevents ipycanvas deprecation transformers \
-gitpython tensorboard jaxlib
+gitpython tensorboard jaxlib matplotlib
 ```
 
 ## Install from source

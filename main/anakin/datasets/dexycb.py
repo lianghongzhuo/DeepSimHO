@@ -239,7 +239,7 @@ class DexYCB(HOdata):
     def get_hand_faces(self, idx):
         sample = self.dataset[idx]
         mano_layer = self.dexycb_mano_left if sample["mano_side"] == "left" else self.dexycb_mano_right
-        faces = np.array(mano_layer.th_faces).astype(np.long)
+        faces = np.array(mano_layer.th_faces)#.astype(np.long)
         return faces
 
     def get_hand_verts_2d(self, idx):
@@ -376,7 +376,7 @@ class DexYCB(HOdata):
         sample = self.dataset[idx]
         grasp_ycb_idx = sample["ycb_ids"][sample["ycb_grasp_ind"]]
         obj_mesh = self.obj_raw_meshes[grasp_ycb_idx]
-        faces = np.array(obj_mesh.faces).astype(np.long)
+        faces = np.array(obj_mesh.faces)#.astype(np.long)
         # pad the face so that it becomes of shape 2008
         n_rows_to_pad = 2008 - faces.shape[0]
         # print(n_rows_to_pad)

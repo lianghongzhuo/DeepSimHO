@@ -105,7 +105,7 @@ Download the pretrained [model](https://drive.google.com/drive/folders/1-yfIrPaq
 
 ```sh
 cd main
-CUDA_VISIBLE_DEVICES=0 python scripts/main.py --cfg config/test/test_ho3dv2-_artiboost_pretrain.yaml --gpu_id 0 --evaluate'
+CUDA_VISIBLE_DEVICES=0 python scripts/main.py --cfg config/test/test_ho3dv2-_artiboost_pretrain.yaml --gpu_id 0 --evaluate
 ```
 
 ### DexYCB
@@ -113,7 +113,7 @@ CUDA_VISIBLE_DEVICES=0 python scripts/main.py --cfg config/test/test_ho3dv2-_art
 Download the pretrained [model](https://drive.google.com/drive/folders/1-yfIrPaqLfwJU-kpUfGDsuo9eQwEGp_h?usp=sharing) into `main/checkpoints/pretrained` and run the below command.
 ```sh
 cd main
-CUDA_VISIBLE_DEVICES=0 python scripts/main.py --cfg config/test/test_dexycb_artiboost_pretrain.yaml --gpu_id 0 --evaluate'
+CUDA_VISIBLE_DEVICES=0 python scripts/main.py --cfg config/test/test_dexycb_artiboost_pretrain.yaml --gpu_id 0 --evaluate
 ```
 
 If runs properly, you should find the results like below. Note the physics metrics may vary slightly due to the simulation precision.

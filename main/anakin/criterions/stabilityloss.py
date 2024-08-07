@@ -24,9 +24,9 @@ def calculate_sdf(hand_verts, obj_verts, hand_faces, obj_faces):
             if not obj_face[k].eq(0).all():
                 break
         obj_face = obj_face[:k+1, :]
-        face_vertices = index_vertices_by_faces(obj_verts[i].unsqueeze(0).contiguous(), obj_face)
+        face_vertices = index_vertices_by_faces(obj_verts[i].unsqueeze(0).contiguous(), obj_face.type(torch.int64))
         distance, _, _ = point_to_mesh_distance(hand_verts[i].unsqueeze(0).contiguous(), face_vertices)
-        sign = check_sign(obj_verts[i].unsqueeze(0).contiguous(), obj_face, hand_verts[i].unsqueeze(0).contiguous()).int()
+        sign = check_sign(obj_verts[i].unsqueeze(0).contiguous(), obj_face.type(torch.int64), hand_verts[i].unsqueeze(0).contiguous()).int()
         sign[sign == 0] = -1
         hand_sample_obj_mesh_pd_.append(distance * sign.int())
 

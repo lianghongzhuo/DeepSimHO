@@ -5,9 +5,12 @@
 micromamba create -n deepsimho python=3.11
 micromamba activate deepsimho
 
+# install cuda
+micromamba install nvidia/label/cuda-12.0.0::cuda-libraries
+
 # install packages from conda-forge, make sure it install cuda version of pytorch
-micromamba install pytorch3d pandas opencv numba scipy kaolin pytorch trimesh \
-mujoco ipython transforms3d ipyevents ipycanvas deprecation transformers \
+micromamba install pytorch3d pandas opencv numba scipy kaolin pytorch trimesh imageio\
+mujoco ipython transforms3d ipyevents ipycanvas deprecation transformers freetype-py \
 gitpython tensorboard matplotlib
 
 # be carefull jax needs to be installed using cpu version

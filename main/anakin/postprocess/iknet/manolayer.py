@@ -32,9 +32,6 @@ class ManoLayer:
         robust_rot=False,
     ):
         super().__init__()
-        # get the path of current folder
-        current_folder = os.path.dirname(os.path.abspath(__file__))
-        mano_root = current_folder + "/../../../thirdparty/manotorch/" + mano_root
         self.center_idx = center_idx
         self.robust_rot = robust_rot
         if root_rot_mode == "axisang":

@@ -51,19 +51,16 @@ class DexYCB(HOdata):
             use_pca=True,
             ncomps=45,
         )
-        # get the path of current folder
-        current_folder = os.path.dirname(os.path.abspath(__file__))
-        mano_path = current_folder + "/../../thirdparty/manotorch/"
         self.standard_mano_layer_pca = manolayer.ManoLayer(flat_hand_mean=False,
                          ncomps=45,
                          side="right",
-                         mano_root=mano_path+'assets/mano_v1_2/models',
+                         mano_root='assets/mano_v1_2/models',
                          use_pca=True)
 
         self.standard_mano_layer_axis = manolayer.ManoLayer(
                               joint_rot_mode="axisang",
                               use_pca=False,
-                              mano_root=mano_path+'assets/mano_v1_2/models',
+                              mano_root='assets/mano_v1_2/models',
                               center_idx=None,
                               flat_hand_mean=True,
                               side="right",

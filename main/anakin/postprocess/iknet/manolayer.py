@@ -32,6 +32,7 @@ class ManoLayer:
         robust_rot=False,
     ):
         super().__init__()
+
         self.center_idx = center_idx
         self.robust_rot = robust_rot
         if root_rot_mode == "axisang":

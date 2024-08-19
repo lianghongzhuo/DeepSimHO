@@ -51,6 +51,7 @@ class DexYCB(HOdata):
             use_pca=True,
             ncomps=45,
         )
+
         self.standard_mano_layer_pca = manolayer.ManoLayer(flat_hand_mean=False,
                          ncomps=45,
                          side="right",
